@@ -49,15 +49,11 @@ const config: webpack.Configuration = {
                 auto: /\.module\.\w+$/,
                 localIdentName: isProduction ? "[hash:base64]" : "[path][name]__[local]",
               },
-              sourceMap: isDevelopment,
               importLoaders: 2,
             },
           },
           {
             loader: "postcss-loader",
-            options: {
-              sourceMap: true,
-            },
           },
           {
             loader: "sass-loader",
@@ -66,7 +62,6 @@ const config: webpack.Configuration = {
               sassOptions: {
                 fiber: fibers,
               },
-              sourceMap: isDevelopment,
             },
           },
         ],
