@@ -50,6 +50,13 @@ const config: webpack.Configuration = {
                 localIdentName: isProduction ? "[hash:base64]" : "[path][name]__[local]",
               },
               sourceMap: isDevelopment,
+              importLoaders: 2,
+            },
+          },
+          {
+            loader: "postcss-loader",
+            options: {
+              sourceMap: true,
             },
           },
           {
