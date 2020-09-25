@@ -1,11 +1,15 @@
 dependencies:
   '@babel/runtime-corejs3': 7.11.2
+  react: 16.13.1
+  react-dom: 16.13.1_react@16.13.1
   tslib: 2.0.1
 devDependencies:
   '@babel/core': 7.11.6
   '@babel/plugin-transform-runtime': 7.11.5_@babel+core@7.11.6
   '@babel/preset-env': 7.11.5_@babel+core@7.11.6
   '@types/node': 14.11.2
+  '@types/react': 16.9.49
+  '@types/react-dom': 16.9.8
   '@types/webpack': 4.41.22
   babel-loader: 8.1.0_d2a654c8b7ff226093b38eb7b56a78a8
   cross-env: 7.0.2
@@ -978,6 +982,23 @@ packages:
     dev: true
     resolution:
       integrity: sha512-jiE3QIxJ8JLNcb1Ps6rDbysDhN4xa8DJJvuC9prr6w+1tIh+QAbYyNF3tyiZNLDBIuBCf4KEcV2UvQm/V60xfA==
+  /@types/prop-types/15.7.3:
+    dev: true
+    resolution:
+      integrity: sha512-KfRL3PuHmqQLOG+2tGpRO26Ctg+Cq1E01D2DMriKEATHgWLfeNDmq9e29Q9WIky0dQ3NPkd1mzYH8Lm936Z9qw==
+  /@types/react-dom/16.9.8:
+    dependencies:
+      '@types/react': 16.9.49
+    dev: true
+    resolution:
+      integrity: sha512-ykkPQ+5nFknnlU6lDd947WbQ6TE3NNzbQAkInC2EKY1qeYdTKp7onFusmYZb+ityzx2YviqT6BXSu+LyWWJwcA==
+  /@types/react/16.9.49:
+    dependencies:
+      '@types/prop-types': 15.7.3
+      csstype: 3.0.3
+    dev: true
+    resolution:
+      integrity: sha512-DtLFjSj0OYAdVLBbyjhuV9CdGVHCkHn2R+xr3XkBvK2rS1Y1tkc14XSGjYgm5Fjjr90AxH9tiSzc1pCFMGO06g==
   /@types/source-list-map/0.1.2:
     dev: true
     resolution:
@@ -1782,6 +1803,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-fz4spIh+znjO2VjL+IdhEpRJ3YN6sMzITSBijk6FK2UvTqruSQW+/cCZTSNsMiZNvUeq0CqurF+dAbyiGOY6Wg==
+  /csstype/3.0.3:
+    dev: true
+    resolution:
+      integrity: sha512-jPl+wbWPOWJ7SXsWyqGRk3lGecbar0Cb0OvZF/r/ZU011R4YqiRehgkQ9p4eQfo9DSDLqLL3wHwfxeJiuIsNag==
   /cyclist/1.0.1:
     dev: true
     resolution:
@@ -2695,7 +2720,6 @@ packages:
     resolution:
       integrity: sha1-TkMekrEalzFjaqH5yNHMvP2reN8=
   /js-tokens/4.0.0:
-    dev: true
     resolution:
       integrity: sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ==
   /jsesc/0.5.0:
@@ -2808,7 +2832,6 @@ packages:
   /loose-envify/1.4.0:
     dependencies:
       js-tokens: 4.0.0
-    dev: true
     hasBin: true
     resolution:
       integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
@@ -3056,7 +3079,6 @@ packages:
     resolution:
       integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==
   /object-assign/4.1.1:
-    dev: true
     engines:
       node: '>=0.10.0'
     resolution:
@@ -3263,6 +3285,14 @@ packages:
     dev: true
     resolution:
       integrity: sha1-mEcocL8igTL8vdhoEputEsPAKeM=
+  /prop-types/15.7.2:
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      react-is: 16.13.1
+    dev: false
+    resolution:
+      integrity: sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
   /prr/1.0.1:
     dev: true
     resolution:
@@ -3339,6 +3369,32 @@ packages:
     dev: true
     resolution:
       integrity: sha512-87lcbR8+MhcWcUiQ+9e+Rwx8MyR2P7qnt15ynUlbm3TU/fjbgz4GsvfSUDTemtCCtVCqb4ZcEFlyPNTh9bBTLw==
+  /react-dom/16.13.1_react@16.13.1:
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      prop-types: 15.7.2
+      react: 16.13.1
+      scheduler: 0.19.1
+    dev: false
+    peerDependencies:
+      react: ^16.13.1
+    resolution:
+      integrity: sha512-81PIMmVLnCNLO/fFOQxdQkvEq/+Hfpv24XNJfpyZhTRfO0QcmQIF/PgCa1zCOj2w1hrn12MFLyaJ/G0+Mxtfag==
+  /react-is/16.13.1:
+    dev: false
+    resolution:
+      integrity: sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
+  /react/16.13.1:
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+      prop-types: 15.7.2
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha512-YMZQQq32xHLX0bz5Mnibv1/LHb3Sqzngu7xstSM+vrkE5Kzr9xE0yMByK5kMoTK30YVJE61WfbxIFFvfeDKT1w==
   /readable-stream/2.3.7:
     dependencies:
       core-util-is: 1.0.2
@@ -3540,6 +3596,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==
+  /scheduler/0.19.1:
+    dependencies:
+      loose-envify: 1.4.0
+      object-assign: 4.1.1
+    dev: false
+    resolution:
+      integrity: sha512-n/zwRWRYSUj0/3g/otKDRPMh6qv2SYMWNq85IEa8iZyAv8od9zDYpGSnpBEjNgcMNq6Scbu5KfIPxNF72R/2EA==
   /schema-utils/1.0.0:
     dependencies:
       ajv: 6.12.5
@@ -4280,9 +4343,13 @@ specifiers:
   '@babel/preset-env': ^7.11.5
   '@babel/runtime-corejs3': ^7.11.2
   '@types/node': ^14.11.2
+  '@types/react': ^16.9.49
+  '@types/react-dom': ^16.9.8
   '@types/webpack': ^4.41.22
   babel-loader: ^8.1.0
   cross-env: ^7.0.2
+  react: ^16.13.1
+  react-dom: ^16.13.1
   ts-loader: ^8.0.4
   ts-node: ^9.0.0
   tsconfig-paths: ^3.9.0

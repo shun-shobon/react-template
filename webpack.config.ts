@@ -18,7 +18,7 @@ const config: webpack.Configuration = {
   },
   devtool: isDevelopment ? "inline-source-map" : false,
   resolve: {
-    extensions: [".tsx", ".ts"],
+    extensions: [".tsx", ".ts", ".jsx", ".js"],
   },
   module: {
     rules: [
