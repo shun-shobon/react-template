@@ -15,6 +15,7 @@
   },
   "scripts": {
     "build": "cross-env TS_NODE_PROJECT='tsconfig.config.json' webpack",
+    "clean": "rimraf dist",
     "dev": "cross-env TS_NODE_PROJECT='tsconfig.config.json' webpack-dev-server"
   },
   "license": "MIT",
@@ -47,6 +48,7 @@
     "html-webpack-plugin": "^4.5.0",
     "postcss": "^8.0.9",
     "postcss-loader": "^4.0.2",
+    "rimraf": "^3.0.2",
     "sass": "^1.26.11",
     "sass-loader": "^10.0.2",
     "style-loader": "^1.2.1",
