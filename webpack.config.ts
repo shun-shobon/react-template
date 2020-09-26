@@ -3,6 +3,7 @@ import * as path from "path";
 import sass from "sass";
 import fibers from "fibers";
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
 
 const isProduction = process.env.NODE_ENV === "production";
 const isDevelopment = !isProduction;
@@ -101,6 +102,16 @@ const config: webpack.Configuration = {
       minify: isProduction,
       template: path.join(__dirname, "public", "index.html"),
       scriptLoading: "defer",
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.join(__dirname, "public"),
+          globOptions: {
+            ignore: ["index.html"],
+          },
+        },
+      ],
     }),
   ],
 };
