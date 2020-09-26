@@ -66,6 +66,32 @@ const config: webpack.Configuration = {
           },
         ],
       },
+      {
+        test: /\.(?:png|jpe?g|gif|svg|webp)$/,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 8192,
+              fallback: "file-loader",
+              name: "images/[name].[contenthash:8].[ext]",
+            },
+          },
+        ],
+      },
+      {
+        test: /\.(?:woff|woff2|ttf|otf)$/,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              limit: 8192,
+              fallback: "file-loader",
+              name: "fonts/[name].[contenthash:8].[ext]",
+            },
+          },
+        ],
+      },
     ],
   },
 };
