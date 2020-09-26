@@ -114,6 +114,9 @@ const config: webpack.Configuration = {
       ],
     }),
   ],
+  devServer: {
+    historyApiFallback: true,
+  },
 };
 
 export default config;
