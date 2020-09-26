@@ -126,6 +126,24 @@ const config: webpack.Configuration = {
   devServer: {
     historyApiFallback: true,
   },
+  optimization: {
+    splitChunks: {
+      cacheGroups: {
+        react: {
+          test: /[\\/]node_modules[\\/](react|react-dom|react-router)/,
+          name: "react",
+          chunks: "initial",
+          priority: 100,
+        },
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendor",
+          chunks: "initial",
+          priority: 10,
+        }
+      },
+    },
+  },
 };
 
 export default config;
