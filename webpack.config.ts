@@ -2,6 +2,7 @@ import * as webpack from "webpack";
 import * as path from "path";
 import sass from "sass";
 import fibers from "fibers";
+import HtmlWebpackPlugin from "html-webpack-plugin";
 
 const isProduction = process.env.NODE_ENV === "production";
 const isDevelopment = !isProduction;
@@ -94,6 +95,14 @@ const config: webpack.Configuration = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      inject: "body",
+      minify: isProduction,
+      template: path.join(__dirname, "public", "index.html"),
+      scriptLoading: "defer",
+    }),
+  ],
 };
 
 export default config;
