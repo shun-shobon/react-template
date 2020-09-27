@@ -1,5 +1,6 @@
 import * as webpack from "webpack";
 import * as path from "path";
+import * as dotenv from "dotenv";
 import sass from "sass";
 import fibers from "fibers";
 import HtmlWebpackPlugin from "html-webpack-plugin";
@@ -7,10 +8,20 @@ import CopyWebpackPlugin from "copy-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import CompressionPlugin from "compression-webpack-plugin";
 
+dotenv.config();
+
 const isProduction = process.env.NODE_ENV === "production";
 const isDevelopment = !isProduction;
 
 const baseUrl = process.env.BASE_URL ?? "/";
+
+const appEnvArray = Object
+  .entries(process.env)
+  .flatMap(([key, value]) => {
+    if (key !== "NODE_ENV" && !key.startsWith("REACT_APP_")) return [];
+    return [[`process.env.${key}`, JSON.stringify(value)]];
+  });
+const appEnv = Object.fromEntries(appEnvArray) as NodeJS.Dict<string>;
 
 const config: webpack.Configuration = {
   mode: isProduction ? "production" : "development",
@@ -125,6 +136,7 @@ const config: webpack.Configuration = {
       ignoreOrder: true,
     }),
     new CompressionPlugin(),
+    new webpack.DefinePlugin(appEnv),
   ],
   devServer: {
     historyApiFallback: true,

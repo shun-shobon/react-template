@@ -25,6 +25,7 @@ devDependencies:
   cross-env: 7.0.2
   css-loader: 4.3.0_webpack@4.44.2
   cssnano: 4.1.10
+  dotenv: 8.2.0
   fibers: 5.0.0
   file-loader: 6.1.0_webpack@4.44.2
   html-webpack-plugin: 4.5.0_webpack@4.44.2
@@ -2829,6 +2830,12 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-QM8q3zDe58hqUqjraQOmzZ1LIH9SWQJTlEKCH4kJ2oQvLZk7RbQXvtDM2XEq3fwkV9CCvvH4LA0AV+ogFsBM2Q==
+  /dotenv/8.2.0:
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
   /duplexify/3.7.1:
     dependencies:
       end-of-stream: 1.4.4
@@ -7371,6 +7378,7 @@ specifiers:
   cross-env: ^7.0.2
   css-loader: ^4.3.0
   cssnano: ^4.1.10
+  dotenv: ^8.2.0
   fibers: ^5.0.0
   file-loader: ^6.1.0
   html-webpack-plugin: ^4.5.0
