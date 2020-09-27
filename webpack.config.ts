@@ -15,12 +15,10 @@ const isDevelopment = !isProduction;
 
 const baseUrl = process.env.BASE_URL ?? "/";
 
-const appEnvArray = Object
-  .entries(process.env)
-  .flatMap(([key, value]) => {
-    if (key !== "NODE_ENV" && !key.startsWith("REACT_APP_")) return [];
-    return [[`process.env.${key}`, JSON.stringify(value)]];
-  });
+const appEnvArray = Object.entries(process.env).flatMap(([key, value]) => {
+  if (key !== "NODE_ENV" && !key.startsWith("REACT_APP_")) return [];
+  return [[`process.env.${key}`, JSON.stringify(value)]];
+});
 const appEnv = Object.fromEntries(appEnvArray) as NodeJS.Dict<string>;
 
 const config: webpack.Configuration = {
@@ -149,7 +147,7 @@ const config: webpack.Configuration = {
       filename: "[path][base].br",
       algorithm: "brotliCompress",
       compressionOptions: {
-        level: 11
+        level: 11,
       },
     }),
   ],
@@ -170,7 +168,7 @@ const config: webpack.Configuration = {
           name: "vendor",
           chunks: "initial",
           priority: 10,
-        }
+        },
       },
     },
   },
