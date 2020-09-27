@@ -143,7 +143,14 @@ const config: webpack.Configuration = {
       test: /\.(html|css|js|svg)$/,
       filename: "[path][base].gz",
       algorithm: "gzip",
-      threshold: 10240,
+    }),
+    new CompressionPlugin({
+      test: /\.(html|css|js|svg)$/,
+      filename: "[path][base].br",
+      algorithm: "brotliCompress",
+      compressionOptions: {
+        level: 11
+      },
     }),
   ],
   devServer: {
