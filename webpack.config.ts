@@ -139,7 +139,12 @@ const config: webpack.Configuration = {
         },
       ],
     }),
-    new CompressionPlugin(),
+    new CompressionPlugin({
+      test: /\.(html|css|js|svg)$/,
+      filename: "[path][base].gz",
+      algorithm: "gzip",
+      threshold: 10240,
+    }),
   ],
   devServer: {
     historyApiFallback: true,
