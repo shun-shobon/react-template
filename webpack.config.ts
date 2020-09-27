@@ -5,6 +5,7 @@ import fibers from "fibers";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import CompressionPlugin from "compression-webpack-plugin";
 
 const isProduction = process.env.NODE_ENV === "production";
 const isDevelopment = !isProduction;
@@ -122,6 +123,7 @@ const config: webpack.Configuration = {
       esModule: true,
       ignoreOrder: true,
     }),
+    new CompressionPlugin(),
   ],
   devServer: {
     historyApiFallback: true,
