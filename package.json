@@ -16,7 +16,9 @@
   "scripts": {
     "build": "cross-env TS_NODE_PROJECT='tsconfig.config.json' webpack",
     "clean": "rimraf dist",
-    "dev": "cross-env TS_NODE_PROJECT='tsconfig.config.json' webpack-dev-server"
+    "dev": "cross-env TS_NODE_PROJECT='tsconfig.config.json' webpack-dev-server",
+    "eslint": "eslint --ignore-path .gitignore '**/*.{ts,tsx}'",
+    "eslint:fix": "eslint --ignore-path .gitignore '**/*.{ts,tsx}' --fix"
   },
   "license": "MIT",
   "dependencies": {
@@ -40,6 +42,8 @@
     "@types/sass": "^1.16.0",
     "@types/webpack": "^4.41.22",
     "@types/webpack-dev-server": "^3.11.0",
+    "@typescript-eslint/eslint-plugin": "^4.2.0",
+    "@typescript-eslint/parser": "^4.2.0",
     "autoprefixer": "^10.0.0",
     "babel-loader": "^8.1.0",
     "compression-webpack-plugin": "^6.0.2",
@@ -48,12 +52,17 @@
     "css-loader": "^4.3.0",
     "cssnano": "^4.1.10",
     "dotenv": "^8.2.0",
+    "eslint": "^7.10.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-react": "^7.21.2",
     "fibers": "^5.0.0",
     "file-loader": "^6.1.0",
     "html-webpack-plugin": "^4.5.0",
     "mini-css-extract-plugin": "^0.11.2",
     "postcss": "^8.0.9",
     "postcss-loader": "^4.0.2",
+    "prettier": "^2.1.2",
     "rimraf": "^3.0.2",
     "sass": "^1.26.11",
     "sass-loader": "^10.0.2",
