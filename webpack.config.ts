@@ -120,6 +120,7 @@ const config: webpack.Configuration = {
     }),
     new MiniCssExtractPlugin({
       filename: "styles/[name].[contenthash:8].css",
+      chunkFilename: "styles/[id].[contenthash:8].css",
       esModule: true,
       ignoreOrder: true,
     }),
