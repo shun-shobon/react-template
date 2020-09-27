@@ -18,7 +18,9 @@
     "clean": "rimraf dist",
     "dev": "cross-env TS_NODE_PROJECT='tsconfig.config.json' webpack-dev-server",
     "eslint": "eslint --ignore-path .gitignore '**/*.{ts,tsx}'",
-    "eslint:fix": "eslint --ignore-path .gitignore '**/*.{ts,tsx}' --fix"
+    "eslint:fix": "eslint --ignore-path .gitignore '**/*.{ts,tsx}' --fix",
+    "stylelint": "stylelint --ignore-path .gitignore '**/*.{css,scss}'",
+    "stylelint:fix": "stylelint --ignore-path .gitignore '**/*.{css,scss}' --fix"
   },
   "license": "MIT",
   "dependencies": {
@@ -67,6 +69,11 @@
     "sass": "^1.26.11",
     "sass-loader": "^10.0.2",
     "style-loader": "^1.2.1",
+    "stylelint": "^13.7.2",
+    "stylelint-config-recess-order": "^2.1.0",
+    "stylelint-config-standard-scss": "^1.1.0",
+    "stylelint-order": "^4.1.0",
+    "stylelint-scss": "^3.18.0",
     "ts-loader": "^8.0.4",
     "ts-node": "^9.0.0",
     "tsconfig-paths": "^3.9.0",
