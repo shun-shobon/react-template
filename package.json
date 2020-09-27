@@ -22,6 +22,15 @@
     "stylelint": "stylelint --ignore-path .gitignore '**/*.{css,scss}'",
     "stylelint:fix": "stylelint --ignore-path .gitignore '**/*.{css,scss}' --fix"
   },
+  "lint-staged": {
+    "**/*.{ts,tsx}": "eslint --fix",
+    "**/*.{css,scss}": "stylelint --fix"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "license": "MIT",
   "dependencies": {
     "@babel/runtime-corejs3": "^7.11.2",
@@ -61,6 +70,8 @@
     "fibers": "^5.0.0",
     "file-loader": "^6.1.0",
     "html-webpack-plugin": "^4.5.0",
+    "husky": "^4.3.0",
+    "lint-staged": "^10.4.0",
     "mini-css-extract-plugin": "^0.11.2",
     "postcss": "^8.0.9",
     "postcss-loader": "^4.0.2",
