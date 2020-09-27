@@ -116,11 +116,18 @@ const config: webpack.Configuration = {
     ],
   },
   plugins: [
+    new webpack.DefinePlugin(appEnv),
     new HtmlWebpackPlugin({
       inject: "body",
       minify: isProduction,
       template: path.join(__dirname, "public", "index.html"),
       scriptLoading: "defer",
+    }),
+    new MiniCssExtractPlugin({
+      filename: "styles/[name].[contenthash:8].css",
+      chunkFilename: "styles/[id].[contenthash:8].css",
+      esModule: true,
+      ignoreOrder: true,
     }),
     new CopyWebpackPlugin({
       patterns: [
@@ -132,14 +139,7 @@ const config: webpack.Configuration = {
         },
       ],
     }),
-    new MiniCssExtractPlugin({
-      filename: "styles/[name].[contenthash:8].css",
-      chunkFilename: "styles/[id].[contenthash:8].css",
-      esModule: true,
-      ignoreOrder: true,
-    }),
     new CompressionPlugin(),
-    new webpack.DefinePlugin(appEnv),
   ],
   devServer: {
     historyApiFallback: true,
