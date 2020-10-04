@@ -5,7 +5,6 @@ import sass from "sass";
 import fibers from "fibers";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import CompressionPlugin from "compression-webpack-plugin";
 
 dotenv.config();
@@ -56,10 +55,7 @@ const config: webpack.Configuration = {
         test: /\.(?:c|sa|sc)ss$/,
         use: [
           {
-            loader: MiniCssExtractPlugin.loader,
-            options: {
-              hmr: isDevelopment,
-            },
+            loader: "style-loader",
           },
           {
             loader: "css-loader",
@@ -121,12 +117,6 @@ const config: webpack.Configuration = {
       minify: isProduction,
       template: path.join(__dirname, "public", "index.html"),
       scriptLoading: "defer",
-    }),
-    new MiniCssExtractPlugin({
-      filename: "styles/[name].[contenthash:8].css",
-      chunkFilename: "styles/[id].[contenthash:8].css",
-      esModule: true,
-      ignoreOrder: true,
     }),
     new CopyWebpackPlugin({
       patterns: [
