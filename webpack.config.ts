@@ -5,7 +5,6 @@ import sass from "sass";
 import fibers from "fibers";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
-import CompressionPlugin from "compression-webpack-plugin";
 
 dotenv.config();
 
@@ -127,19 +126,6 @@ const config: webpack.Configuration = {
           },
         },
       ],
-    }),
-    new CompressionPlugin({
-      test: /\.(html|css|js|svg)$/,
-      filename: "[path][base].gz",
-      algorithm: "gzip",
-    }),
-    new CompressionPlugin({
-      test: /\.(html|css|js|svg)$/,
-      filename: "[path][base].br",
-      algorithm: "brotliCompress",
-      compressionOptions: {
-        level: 11,
-      },
     }),
   ],
   devServer: {
