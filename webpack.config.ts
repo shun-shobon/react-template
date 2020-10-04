@@ -67,6 +67,7 @@ const config: webpack.Configuration = {
               modules: {
                 auto: /\.module\.\w+$/,
                 localIdentName: isProduction ? "[hash:base64]" : "[path][name]__[local]",
+                exportLocalsConvention: "dashes",
               },
               importLoaders: 2,
             },
