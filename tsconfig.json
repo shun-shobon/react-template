@@ -11,5 +11,13 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true
+  },
+  "ts-node": {
+    "compilerOptions": {
+      "target": "es2020",
+      "module": "commonjs",
+      "lib": ["es2020"],
+      "types": ["@types/node"]
+    }
   }
 }

@@ -21,7 +21,6 @@ devDependencies:
   autoprefixer: 10.0.1_postcss@8.1.1
   babel-loader: 8.1.0_d2a654c8b7ff226093b38eb7b56a78a8
   copy-webpack-plugin: 6.2.0_webpack@4.44.2
-  cross-env: 7.0.2
   css-loader: 4.3.0_webpack@4.44.2
   cssnano: 4.1.10
   dotenv: 8.2.0
@@ -48,7 +47,6 @@ devDependencies:
   stylelint-scss: 3.18.0_stylelint@13.7.2
   ts-loader: 8.0.4_typescript@4.0.3
   ts-node: 9.0.0_typescript@4.0.3
-  tsconfig-paths: 3.9.0
   typescript: 4.0.3
   url-loader: 4.1.0_file-loader@6.1.0+webpack@4.44.2
   webpack: 4.44.2_webpack-cli@3.3.12
@@ -1176,10 +1174,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-3c+yGKvVP5Y9TYBEibGNR+kLtijnj7mYrXRg+WpFb2X9xm04g/DXYkfg4hmzJQosc9snFNUPkbYIhu+KAm6jJw==
-  /@types/json5/0.0.29:
-    dev: true
-    resolution:
-      integrity: sha1-7ihweulOEdK4J7y+UnC86n8+ce4=
   /@types/mime/2.0.3:
     dev: true
     resolution:
@@ -2687,17 +2681,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-MJG9liiZ+ogc4TzUwuvbER1JRdgvUFSB5+VR/g5h82fGaIRWMWddtKBHi7/sVhfjQZ6SehlyhvQYrcYkaUIpLg==
-  /cross-env/7.0.2:
-    dependencies:
-      cross-spawn: 7.0.3
-    dev: true
-    engines:
-      node: '>=10.14'
-      npm: '>=6'
-      yarn: '>=1'
-    hasBin: true
-    resolution:
-      integrity: sha512-KZP/bMEOJEDCkDQAyRhu3RL2ZO/SUVrxQVI0G3YEQ+OLbRA3c6zgixe8Mq8a/z7+HKlNEjo8oiLUs8iRijY2Rw==
   /cross-spawn/6.0.5:
     dependencies:
       nice-try: 1.0.5
@@ -7948,12 +7931,6 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-AuvKTrTfQNYNIctbR1K/YGTR1756GycPsg7b9bdV9Duqur4gv6aKqHXah67Z8ImS7WEz5QVcOtlfW2rZEugt6w==
-  /strip-bom/3.0.0:
-    dev: true
-    engines:
-      node: '>=4'
-    resolution:
-      integrity: sha1-IzTBjpx1n3vdVv3vfprj1YjmjtM=
   /strip-eof/1.0.0:
     dev: true
     engines:
@@ -8383,15 +8360,6 @@ packages:
       typescript: '>=2.7'
     resolution:
       integrity: sha512-/TqB4SnererCDR/vb4S/QvSZvzQMJN8daAslg7MeaiHvD8rDZsSfXmNeNumyZZzMned72Xoq/isQljYSt8Ynfg==
-  /tsconfig-paths/3.9.0:
-    dependencies:
-      '@types/json5': 0.0.29
-      json5: 1.0.1
-      minimist: 1.2.5
-      strip-bom: 3.0.0
-    dev: true
-    resolution:
-      integrity: sha512-dRcuzokWhajtZWkQsDVKbWyY+jgcLC5sqJhg2PSgf4ZkH2aHPvaOY8YWGhmjb68b5qqTfasSsDO9k7RUiEmZAw==
   /tslib/1.14.0:
     dev: true
     resolution:
@@ -9107,7 +9075,6 @@ specifiers:
   autoprefixer: ^10.0.1
   babel-loader: ^8.1.0
   copy-webpack-plugin: ^6.2.0
-  cross-env: ^7.0.2
   css-loader: ^4.3.0
   cssnano: ^4.1.10
   dotenv: ^8.2.0
@@ -9136,7 +9103,6 @@ specifiers:
   stylelint-scss: ^3.18.0
   ts-loader: ^8.0.4
   ts-node: ^9.0.0
-  tsconfig-paths: ^3.9.0
   tslib: ^2.0.2
   typescript: ^4.0.3
   url-loader: ^4.1.0
