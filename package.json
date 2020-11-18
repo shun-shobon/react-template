@@ -4,15 +4,9 @@
   "description": "Reactのプロジェクトテンプレートです。",
   "homepage": "https://github.com/shun-shobon/react-template#readme",
   "bugs": "https://github.com/shun-shobon/react-template/issues",
-  "author": {
-    "name": "SHUN/しゅん",
-    "email": "me@shun.technology",
-    "url": "https://github.com/shun-shobon"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shun-shobon/react-template.git"
-  },
+  "license": "MIT",
+  "author": "Shuntaro Nishizawa <me@shun.technology> (https://github.com/shun-shobon)",
+  "repository": "https://github.com/shun-shobon/react-template.git",
   "scripts": {
     "build": "webpack",
     "clean": "rimraf dist",
@@ -31,7 +25,6 @@
       "pre-commit": "lint-staged"
     }
   },
-  "license": "MIT",
   "dependencies": {
     "core-js": "^3.7.0",
     "react": "^17.0.1",
