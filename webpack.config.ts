@@ -1,37 +1,33 @@
-import * as webpack from "webpack";
-import * as path from "path";
-import * as dotenv from "dotenv";
-import sass from "sass";
-import fibers from "fibers";
+import { EnvironmentPlugin, WebpackOptionsNormalized, WebpackPluginInstance } from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
+import sass from "sass";
+import fibers from "fibers";
+import * as dotenv from "dotenv";
+import * as path from "path";
 
 dotenv.config();
 
 const isProduction = process.env.NODE_ENV === "production";
 const isDevelopment = !isProduction;
 
-const baseUrl = process.env.BASE_URL ?? "/";
+const baseURL = process.env.BASE_URL ?? "/";
 
-const appEnvArray = Object.entries(process.env).flatMap(([key, value]) => {
-  if (key !== "NODE_ENV" && !key.startsWith("REACT_APP_")) return [];
-  return [[`process.env.${key}`, JSON.stringify(value)]];
-});
-const appEnv = Object.fromEntries(appEnvArray) as NodeJS.Dict<string>;
-
-const config: webpack.Configuration = {
+const config: WebpackOptionsNormalized = {
   mode: isProduction ? "production" : "development",
   entry: {
-    main: path.join(__dirname, "src", "index.tsx"),
+    index: {
+      import: [path.join(__dirname, "src", "index.tsx")],
+    },
   },
   output: {
-    publicPath: baseUrl,
     path: path.join(__dirname, "dist"),
-    filename: "scripts/[name].[contenthash:8].js",
+    publicPath: baseURL,
+    filename: "assets/scripts/[name].[contenthash:8].js",
+    chunkFilename: "assets/scripts/chunk.[contenthash:8].js",
   },
-  devtool: isDevelopment ? "inline-source-map" : false,
   resolve: {
-    extensions: [".tsx", ".ts", ".jsx", ".js"],
+    extensions: [".tsx", ".ts", ".js"],
   },
   module: {
     rules: [
@@ -59,20 +55,25 @@ const config: webpack.Configuration = {
           {
             loader: "css-loader",
             options: {
-              modules: {
-                auto: /\.module\.\w+$/,
-                localIdentName: isProduction ? "[hash:base64]" : "[path][name]__[local]",
-                exportLocalsConvention: "dashes",
-              },
+              sourceMap: isDevelopment,
               importLoaders: 2,
+              modules: {
+                auto: true,
+                localIdentName: isProduction ? "[hash:base64:8]" : "[path][name]__[local]",
+                exportLocalsConvention: "dashesOnly",
+              },
             },
           },
           {
             loader: "postcss-loader",
+            options: {
+              sourceMap: isDevelopment,
+            },
           },
           {
             loader: "sass-loader",
             options: {
+              sourceMap: isDevelopment,
               implementation: sass,
               sassOptions: {
                 fiber: fibers,
@@ -82,73 +83,56 @@ const config: webpack.Configuration = {
         ],
       },
       {
-        test: /\.(?:png|jpe?g|gif|svg|webp)$/,
-        use: [
-          {
-            loader: "url-loader",
-            options: {
-              limit: 8192,
-              fallback: "file-loader",
-              name: "images/[name].[contenthash:8].[ext]",
-            },
+        test: /\.(?:png|jpe?g|svg|gif|webp)$/,
+        type: "asset",
+        generator: {
+          filename: "assets/images/[name].[contenthash:8].[ext]",
+        },
+        parser: {
+          dataUrlCondition: {
+            maxSize: 4 * 1024,
           },
-        ],
-      },
-      {
-        test: /\.(?:woff|woff2|ttf|otf)$/,
-        use: [
-          {
-            loader: "url-loader",
-            options: {
-              limit: 8192,
-              fallback: "file-loader",
-              name: "fonts/[name].[contenthash:8].[ext]",
-            },
-          },
-        ],
+        },
       },
     ],
   },
   plugins: [
-    new webpack.DefinePlugin(appEnv),
+    new EnvironmentPlugin(
+      Object.keys(process.env).filter(
+        (name) => name === "NODE_ENV" || name.startsWith("PREACT_APP_"),
+      ),
+    ),
     new HtmlWebpackPlugin({
-      inject: "body",
+      inject: "head",
       minify: isProduction,
-      template: path.join(__dirname, "public", "index.html"),
+      template: path.join(__dirname, "src", "index.html"),
       scriptLoading: "defer",
     }),
-    new CopyWebpackPlugin({
+    (new CopyWebpackPlugin({
       patterns: [
         {
           from: path.join(__dirname, "public"),
-          globOptions: {
-            ignore: ["index.html"],
-          },
         },
       ],
-    }),
+    }) as unknown) as WebpackPluginInstance,
   ],
+  stats: true,
+  devtool: isDevelopment ? "eval-source-map" : "nosources-source-map",
+  cache: {
+    type: "filesystem",
+  },
   devServer: {
     historyApiFallback: true,
   },
-  optimization: {
-    splitChunks: {
-      cacheGroups: {
-        react: {
-          test: /[\\/]node_modules[\\/](react|react-dom|react-router)/,
-          name: "react",
-          chunks: "initial",
-          priority: 100,
-        },
-        vendors: {
-          test: /[\\/]node_modules[\\/]/,
-          name: "vendor",
-          chunks: "initial",
-          priority: 10,
-        },
-      },
-    },
-  },
+  optimization: {},
+  node: false,
+  externals: [],
+  externalsPresets: {},
+  experiments: {},
+  infrastructureLogging: {},
+  resolveLoader: {},
+  snapshot: {},
+  watchOptions: {},
 };
 
 export default config;
