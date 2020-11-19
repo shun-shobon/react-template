@@ -1,6 +1,5 @@
 # React Template
 
-![test](https://github.com/shun-shobon/react-template/workflows/test/badge.svg)
-![deploy](https://github.com/shun-shobon/react-template/workflows/deploy/badge.svg)
+[![ci](https://github.com/shun-shobon/react-template/workflows/ci/badge.svg)](https://github.com/shun-shobon/react-template/actions?query=workflow%3Aci+branch%3Amaster)
 
 > Reactのプロジェクトテンプレートです。
