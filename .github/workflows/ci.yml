@@ -1,0 +1,48 @@
+name: ci
+on: push
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - uses: pnpm/action-setup@v1.2.1
+        with:
+          version: 5.11.1
+      - run: pnpm install
+
+      - name: Run list
+        run: pnpm lint
+
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        mode:
+          - production
+          - development
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - uses: pnpm/action-setup@v1.2.1
+        with:
+          version: 5.11.1
+      - run: pnpm install
+
+      - name: Run build
+        env:
+          NODE_ENV: ${{ matrix.mode }}
+        run: |
+          pnpm clean
+          pnpm build
+
+      - name: Upload ${{ matrix.mode }} dist
+        uses: actions/upload-artifact@v2
+        with:
+          name: dist-${{ matrix.mode }}
+          path: dist
