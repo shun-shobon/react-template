@@ -4,6 +4,7 @@ dependencies:
   react-dom: 17.0.1_react@17.0.1
   tslib: 2.0.3
 devDependencies:
+  '@approvers/stylelint-config-scss': 1.0.0_ecb35a9753d1cb8d84508f1c383a41ff
   '@babel/core': 7.12.3
   '@babel/preset-env': 7.12.1_@babel+core@7.12.3
   '@types/copy-webpack-plugin': 6.3.0
@@ -40,8 +41,6 @@ devDependencies:
   style-loader: 2.0.0_webpack@5.5.0
   stylelint: 13.8.0
   stylelint-config-recess-order: 2.3.0_stylelint@13.8.0
-  stylelint-config-standard-scss: 1.1.0_ecb35a9753d1cb8d84508f1c383a41ff
-  stylelint-order: 4.1.0_stylelint@13.8.0
   stylelint-scss: 3.18.0_stylelint@13.8.0
   ts-loader: 8.0.11_typescript@4.0.5+webpack@5.5.0
   ts-node: 9.0.0_typescript@4.0.5
@@ -51,6 +50,17 @@ devDependencies:
   webpack-dev-server: 3.11.0_webpack-cli@4.2.0+webpack@5.5.0
 lockfileVersion: 5.2
 packages:
+  /@approvers/stylelint-config-scss/1.0.0_ecb35a9753d1cb8d84508f1c383a41ff:
+    dependencies:
+      stylelint: 13.8.0
+      stylelint-config-standard: 20.0.0_stylelint@13.8.0
+      stylelint-scss: 3.18.0_stylelint@13.8.0
+    dev: true
+    peerDependencies:
+      stylelint: ^10.1.0 || ^11.0.0 || ^12.0.0 || ^13.0.0
+      stylelint-scss: ^3.0.0
+    resolution:
+      integrity: sha512-IVgypzQHTKfqAfaxgKJ91g2kgiNRZY7NGBRs/g2CGTQFawcR4htxvhCNdeL4nq+VESwkzIwerLyEM2qA/r3pRg==
   /@babel/code-frame/7.10.4:
     dependencies:
       '@babel/highlight': 7.10.4
@@ -7447,34 +7457,23 @@ packages:
       stylelint: '>=9'
     resolution:
       integrity: sha512-z1d1m///to9ikecxP0uM2ljAmogHL1A+A4MUXtYrJvZRFPfPeODebimmJacx4cRL/oltEo3I6HqtreyRrn4lBg==
-  /stylelint-config-recommended/2.2.0_stylelint@13.8.0:
+  /stylelint-config-recommended/3.0.0_stylelint@13.8.0:
     dependencies:
       stylelint: 13.8.0
     dev: true
     peerDependencies:
-      stylelint: ^8.3.0 || ^9.0.0 || ^10.0.0
+      stylelint: '>=10.1.0'
     resolution:
-      integrity: sha512-bZ+d4RiNEfmoR74KZtCKmsABdBJr4iXRiCso+6LtMJPw5rd/KnxUWTxht7TbafrTJK1YRjNgnN0iVZaJfc3xJA==
-  /stylelint-config-standard-scss/1.1.0_ecb35a9753d1cb8d84508f1c383a41ff:
+      integrity: sha512-F6yTRuc06xr1h5Qw/ykb2LuFynJ2IxkKfCMf+1xqPffkxh0S09Zc902XCffcsw/XMFq/OzQ1w54fLIDtmRNHnQ==
+  /stylelint-config-standard/20.0.0_stylelint@13.8.0:
     dependencies:
       stylelint: 13.8.0
-      stylelint-config-standard: 18.3.0_stylelint@13.8.0
-      stylelint-scss: 3.18.0_stylelint@13.8.0
+      stylelint-config-recommended: 3.0.0_stylelint@13.8.0
     dev: true
     peerDependencies:
-      stylelint: ^8.3.0 || ^9.0.0 || ^10.0.0
-      stylelint-scss: ^2.0.0 || ^3.0.0
+      stylelint: '>=10.1.0'
     resolution:
-      integrity: sha512-03kuXO1fyeydfyJ/GDngpW2iJFZ20ZsOR1oEbBq+OTLrWZ8063yME5fnPkSkMyEhQ6NVJBG4+/5E0v+AiSFdJQ==
-  /stylelint-config-standard/18.3.0_stylelint@13.8.0:
-    dependencies:
-      stylelint: 13.8.0
-      stylelint-config-recommended: 2.2.0_stylelint@13.8.0
-    dev: true
-    peerDependencies:
-      stylelint: ^8.3.0 || ^9.0.0 || ^10.0.0
-    resolution:
-      integrity: sha512-Tdc/TFeddjjy64LvjPau9SsfVRexmTFqUhnMBrzz07J4p2dVQtmpncRF/o8yZn8ugA3Ut43E6o1GtjX80TFytw==
+      integrity: sha512-IB2iFdzOTA/zS4jSVav6z+wGtin08qfj+YyExHB3LF9lnouQht//YyB0KZq9gGz5HNPkddHOzcY8HsUey6ZUlA==
   /stylelint-order/4.1.0_stylelint@13.8.0:
     dependencies:
       lodash: 4.17.20
@@ -8463,6 +8462,7 @@ packages:
     resolution:
       integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==
 specifiers:
+  '@approvers/stylelint-config-scss': ^1.0.0
   '@babel/core': ^7.12.3
   '@babel/preset-env': ^7.12.1
   '@types/copy-webpack-plugin': ^6.3.0
@@ -8502,8 +8502,6 @@ specifiers:
   style-loader: ^2.0.0
   stylelint: ^13.8.0
   stylelint-config-recess-order: ^2.3.0
-  stylelint-config-standard-scss: ^1.1.0
-  stylelint-order: ^4.1.0
   stylelint-scss: ^3.18.0
   ts-loader: ^8.0.11
   ts-node: ^9.0.0
