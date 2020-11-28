@@ -14,6 +14,7 @@ const isDevelopment = !isProduction;
 const baseURL = process.env.BASE_URL ?? "/";
 
 const config: WebpackOptionsNormalized = {
+  target: "web",
   mode: isProduction ? "production" : "development",
   entry: {
     index: {
