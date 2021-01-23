@@ -1,10 +1,18 @@
-import { EnvironmentPlugin, WebpackOptionsNormalized, WebpackPluginInstance } from "webpack";
+import type WebpackDevServer from "webpack-dev-server";
+import type { Configuration } from "webpack";
+import { EnvironmentPlugin } from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 import sass from "sass";
 import fibers from "fibers";
 import * as dotenv from "dotenv";
 import * as path from "path";
+
+declare module "webpack" {
+  interface Configuration {
+    devServer?: WebpackDevServer.Configuration;
+  }
+}
 
 dotenv.config();
 
@@ -13,13 +21,11 @@ const isDevelopment = !isProduction;
 
 const baseURL = process.env.BASE_URL ?? "/";
 
-const config: WebpackOptionsNormalized = {
+const config: Configuration = {
   target: "web",
   mode: isProduction ? "production" : "development",
   entry: {
-    index: {
-      import: [path.join(__dirname, "src", "index.tsx")],
-    },
+    index: path.join(__dirname, "src", "index.tsx"),
   },
   output: {
     path: path.join(__dirname, "dist"),
@@ -109,15 +115,14 @@ const config: WebpackOptionsNormalized = {
       template: path.join(__dirname, "src", "index.html"),
       scriptLoading: "defer",
     }),
-    (new CopyWebpackPlugin({
+    new CopyWebpackPlugin({
       patterns: [
         {
           from: path.join(__dirname, "public"),
         },
       ],
-    }) as unknown) as WebpackPluginInstance,
+    }) as any,
   ],
-  stats: true,
   devtool: isDevelopment ? "eval-source-map" : "nosources-source-map",
   cache: {
     type: "filesystem",
@@ -125,15 +130,6 @@ const config: WebpackOptionsNormalized = {
   devServer: {
     historyApiFallback: true,
   },
-  optimization: {},
-  node: false,
-  externals: [],
-  externalsPresets: {},
-  experiments: {},
-  infrastructureLogging: {},
-  resolveLoader: {},
-  snapshot: {},
-  watchOptions: {},
 };
 
 export default config;
