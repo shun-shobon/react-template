@@ -23,6 +23,22 @@ const config: Configuration = {
   resolve: {
     extensions: [".tsx", ".ts", ".js"],
   },
+  module: {
+    rules: [
+      {
+        test: /\.tsx?$/,
+        exclude: /node_modules/,
+        use: [
+          {
+            loader: "ts-loader",
+            options: {
+              configFile: resolve("src", "tsconfig.json"),
+            },
+          },
+        ],
+      },
+    ],
+  },
 };
 
 export default config;
