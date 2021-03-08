@@ -1,10 +1,13 @@
 {
   "name": "react-template",
   "description": "Project template for React",
-  "repository":  "https://github.com/shun-shobon/react-template.git",
+  "repository": "https://github.com/shun-shobon/react-template.git",
   "homepage": "https://github.com/shun-shobon/react-template#readme",
-  "bugs":  "https://github.com/shun-shobon/react-template/issues",
+  "bugs": "https://github.com/shun-shobon/react-template/issues",
   "author": "Shuntaro Nishizawa <me@shun.technology> (https://github.com/shun-shobon)",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "typescript": "^4.2.3"
+  }
 }
