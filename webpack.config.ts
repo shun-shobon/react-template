@@ -66,7 +66,9 @@ const config: Configuration = {
               importLoaders: 2,
               modules: {
                 auto: true,
-                localIdentName: isProduction ? "[hash:base64:8]" : "[path][name]__[local]",
+                localIdentName: isProduction
+                  ? "[hash:base64:8]"
+                  : "[path][name]__[local]",
                 exportLocalsConvention: "dashes",
               },
             },
