@@ -12,15 +12,15 @@
     "dev": "webpack serve",
     "lint": "eslint --fix --ignore-path .gitignore \"**/*.{ts,tsx}\"",
     "lint:check": "eslint --ignore-path .gitignore \"**/*.{ts,tsx}\"",
-    "format": "prettier --write --ignore-path .gitignore \"**/*.{js,ts,jsx,tsx}\"",
-    "format:check": "prettier --check --ignore-path .gitignore \"**/*.{js,ts,jsx,tsx}\"",
+    "format": "prettier --write --ignore-path .gitignore \"**/*.{js,ts,jsx,tsx,css,sass,scss}\"",
+    "format:check": "prettier --check --ignore-path .gitignore \"**/*.{js,ts,jsx,tsx,css,sass,scss}\"",
     "fix": "run-s lint format",
     "check": "run-p *:check",
     "postinstall": "husky install"
   },
   "lint-staged": {
     "*.{ts,tsx}": "eslint --fix",
-    "*.{js,ts,jsx,tsx}": "prettier --write"
+    "*.{js,ts,jsx,tsx,css,sass,scss}": "prettier --write"
   },
   "dependencies": {
     "core-js": "^3.9.1",
