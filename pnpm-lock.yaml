@@ -16,6 +16,7 @@ devDependencies:
   '@types/webpack-dev-server': 3.11.2
   autoprefixer: 10.2.5_postcss@8.2.7
   babel-loader: 8.2.2_69db794c318707266a4dc85e46aa7443
+  clean-webpack-plugin: 3.0.0_webpack@5.24.3
   copy-webpack-plugin: 8.0.0_webpack@5.24.3
   cross-env: 7.0.3
   css-loader: 5.1.1_webpack@5.24.3
@@ -1937,6 +1938,18 @@ packages:
       node: '>= 4.0'
     resolution:
       integrity: sha512-VcMWDN54ZN/DS+g58HYL5/n4Zrqe8vHJpGA8KdgUXFU4fuP/aHNw8eld9SyEIyabIMJX/0RaY/fplOo5hYLSFA==
+  /clean-webpack-plugin/3.0.0_webpack@5.24.3:
+    dependencies:
+      '@types/webpack': 4.41.26
+      del: 4.1.1
+      webpack: 5.24.3_webpack-cli@4.5.0
+    dev: true
+    engines:
+      node: '>=8.9.0'
+    peerDependencies:
+      webpack: '*'
+    resolution:
+      integrity: sha512-MciirUH5r+cYLGCOL5JX/ZLzOZbVr1ot3Fw+KcvbhUb6PM+yycqd9ZhIlcigQ5gl+XhppNmw3bEFuaaMNyLj3A==
   /cliui/5.0.0:
     dependencies:
       string-width: 3.1.0
@@ -6656,6 +6669,7 @@ specifiers:
   '@types/webpack-dev-server': ^3.11.2
   autoprefixer: ^10.2.5
   babel-loader: ^8.2.2
+  clean-webpack-plugin: ^3.0.0
   copy-webpack-plugin: ^8.0.0
   core-js: ^3.9.1
   cross-env: ^7.0.3

@@ -1,6 +1,7 @@
 import type { Configuration } from "webpack";
 import type WebpackDevServer from "webpack-dev-server";
 import { EnvironmentPlugin } from "webpack";
+import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
@@ -103,6 +104,7 @@ const config: Configuration = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new EnvironmentPlugin(
       Object.keys(process.env).filter(
         (name) => name === "NODE_ENV" || name.startsWith("REACT_APP_"),
