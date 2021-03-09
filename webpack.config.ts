@@ -1,4 +1,6 @@
 import type { Configuration } from "webpack";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
 import { resolve } from "path";
 
 const isProduction = process.env["NODE_ENV"] === "production";
@@ -40,6 +42,21 @@ const config: Configuration = {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      inject: "head",
+      minify: isProduction,
+      template: resolve("src", "index.html"),
+      scriptLoading: "defer",
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: resolve("public"),
+        },
+      ],
+    }) as any,
+  ],
 };
 
 export default config;
