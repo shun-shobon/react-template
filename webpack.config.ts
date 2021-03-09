@@ -1,4 +1,5 @@
 import type { Configuration } from "webpack";
+import type WebpackDevServer from "webpack-dev-server";
 import { EnvironmentPlugin } from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
@@ -6,6 +7,12 @@ import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import sass from "sass";
 import fibers from "fibers";
 import { resolve } from "path";
+
+declare module "webpack" {
+  interface Configuration {
+    devServer?: WebpackDevServer.Configuration;
+  }
+}
 
 const isProduction = process.env["NODE_ENV"] === "production";
 const basePath = process.env["REACT_APP_BASE_PATH"] ?? "/";
@@ -23,6 +30,9 @@ const config: Configuration = {
     chunkFilename: "assets/scripts/chunk.[contenthash:8].js",
   },
   devtool: isProduction ? "nosources-source-map" : "eval-source-map",
+  devServer: {
+    historyApiFallback: true,
+  },
   cache: {
     type: "filesystem",
   },
