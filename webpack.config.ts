@@ -1,4 +1,5 @@
 import type { Configuration } from "webpack";
+import { EnvironmentPlugin } from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
@@ -7,7 +8,7 @@ import fibers from "fibers";
 import { resolve } from "path";
 
 const isProduction = process.env["NODE_ENV"] === "production";
-const basePath = process.env["BASE_PATH"] ?? "/";
+const basePath = process.env["REACT_APP_BASE_PATH"] ?? "/";
 
 const config: Configuration = {
   target: "web",
@@ -92,6 +93,11 @@ const config: Configuration = {
     ],
   },
   plugins: [
+    new EnvironmentPlugin(
+      Object.keys(process.env).filter(
+        (name) => name === "NODE_ENV" || name.startsWith("REACT_APP_"),
+      ),
+    ),
     new HtmlWebpackPlugin({
       inject: "head",
       minify: isProduction,
