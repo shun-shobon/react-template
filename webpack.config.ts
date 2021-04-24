@@ -129,7 +129,7 @@ const config: Configuration = {
           from: resolve("public"),
         },
       ],
-    }) as any,
+    }),
   ],
 };
 
