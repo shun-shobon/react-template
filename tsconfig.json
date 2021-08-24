@@ -1,9 +1,0 @@
-{
-  "extends": "./tsconfig.base.json",
-  "compilerOptions": {
-    "target": "es2020",
-    "module": "commonjs",
-    "lib": ["esnext"],
-    "types": ["@types/node"],
-  },
-}
