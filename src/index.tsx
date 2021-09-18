@@ -1,5 +1,5 @@
-function hello(name: string) {
-  return `Hello, ${name}`;
-}
+import { render } from "react-dom";
 
-console.log(hello("World!"));
+import App from "./components/App";
+
+render(<App />, document.getElementById("root"));
