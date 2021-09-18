@@ -16,7 +16,8 @@
     "template"
   ],
   "scripts": {
-    "build": "webpack build --config webpack.prod.babel.js"
+    "build": "webpack build --config webpack.prod.babel.js",
+    "dev": "webpack serve --config webpack.dev.babel.js"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",
@@ -26,8 +27,10 @@
     "@babel/register": "^7.15.3",
     "babel-loader": "^8.2.2",
     "core-js": "^3.17.3",
+    "html-webpack-plugin": "^5.3.2",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
+    "webpack-dev-server": "^4.2.1",
     "webpack-merge": "^5.8.0"
   }
 }

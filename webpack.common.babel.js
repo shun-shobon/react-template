@@ -1,3 +1,5 @@
+import HtmlWebpackPlugin from "html-webpack-plugin";
+
 import * as path from "path";
 
 export default {
@@ -22,4 +24,11 @@ export default {
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      inject: "head",
+      template: path.resolve("src", "index.html"),
+      scriptLoading: "defer",
+    }),
+  ],
 };
