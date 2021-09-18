@@ -11,8 +11,23 @@
     "url": "https://github.com/shun-shobon/react-template/issues"
   },
   "homepage": "https://github.com/shun-shobon/react-template#readme",
-  "keywords": ["react", "template"],
+  "keywords": [
+    "react",
+    "template"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack build --config webpack.prod.babel.js"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "@babel/preset-typescript": "^7.15.0",
+    "@babel/register": "^7.15.3",
+    "babel-loader": "^8.2.2",
+    "core-js": "^3.17.3",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0",
+    "webpack-merge": "^5.8.0"
   }
 }
