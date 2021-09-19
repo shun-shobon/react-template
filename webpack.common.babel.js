@@ -22,12 +22,10 @@ export default {
     rules: [
       {
         test: /\.tsx?$/,
-        exclude: /node_modules/,
         loader: "babel-loader",
       },
       {
         test: /\.(?:c|sa|sc)ss$/,
-        exclude: /node_modules/,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -49,6 +47,18 @@ export default {
             },
           },
         ],
+      },
+      {
+        test: /\.(?:png|jpe?g|svg|gif|webp)$/,
+        type: "asset",
+        generator: {
+          filename: "assets/images/[name].[contenthash:8].[ext]",
+        },
+        parser: {
+          dataUrlCondition: {
+            maxSize: 4 * 1024, // 4KB
+          },
+        },
       },
     ],
   },
