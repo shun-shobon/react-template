@@ -20,11 +20,12 @@
     "dev": "webpack serve --config webpack.dev.babel.js",
     "check:type": "tsc",
     "check:code": "eslint --ignore-path .gitignore \"**/*.{ts,tsx}\"",
-    "check:style": "stylelint --ignore-path .gitignore \"**/*.{css,sass,scss}\"",
-    "check:format": "prettier --check --ignore-path .gitignore \"**/*.{js,ts,tsx,css,sass,scss}\"",
+    "check:style": "stylelint --ignore-path .gitignore \"**/*.{css,scss}\"",
+    "check:format": "prettier --check --ignore-path .gitignore \"**/*.{js,ts,tsx,css,scss}\"",
     "fix:code": "eslint --fix --ignore-path .gitignore \"**/*.{ts,tsx}\"",
-    "fix:style": "stylelint --fix --ignore-path .gitignore \"**/*.{css,sass,scss}\"",
-    "fix:format": "prettier --write --ignore-path .gitignore \"**/*.{js,ts,tsx,css,sass,scss}\""
+    "fix:style": "stylelint --fix --ignore-path .gitignore \"**/*.{css,scss}\"",
+    "fix:format": "prettier --write --ignore-path .gitignore \"**/*.{js,ts,tsx,css,scss}\"",
+    "prepare": "husky install"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -56,6 +57,8 @@
     "eslint-plugin-react-hooks": "^4.2.0",
     "fibers": "^5.0.0",
     "html-webpack-plugin": "^5.3.2",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
     "mini-css-extract-plugin": "^2.3.0",
     "postcss": "^8.3.6",
     "postcss-loader": "^6.1.1",
