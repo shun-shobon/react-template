@@ -28,6 +28,7 @@ specifiers:
   mini-css-extract-plugin: ^2.3.0
   postcss: ^8.3.6
   postcss-loader: ^6.1.1
+  prettier: ^2.4.1
   react: ^17.0.2
   react-dom: ^17.0.2
   sass: ^1.41.1
@@ -70,6 +71,7 @@ devDependencies:
   mini-css-extract-plugin: 2.3.0_webpack@5.51.1
   postcss: 8.3.6
   postcss-loader: 6.1.1_postcss@8.3.6+webpack@5.51.1
+  prettier: 2.4.1
   sass: 1.41.1
   sass-loader: 12.1.0_4b1691717b187bb05c7bfca140173f0b
   typescript: 4.4.3
@@ -4899,6 +4901,12 @@ packages:
   /prelude-ls/1.2.1:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
+    dev: true
+
+  /prettier/2.4.1:
+    resolution: {integrity: sha512-9fbDAXSBcc6Bs1mZrDYb3XKzDLm4EXXL9sC1LqKP5rZkT6KRr/rf9amVUcODVXgguK/isJz0d0hP72WeaKWsvA==}
+    engines: {node: '>=10.13.0'}
+    hasBin: true
     dev: true
 
   /pretty-error/3.0.4:
