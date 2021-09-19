@@ -18,7 +18,8 @@
   "scripts": {
     "build": "webpack build --config webpack.prod.babel.js",
     "dev": "webpack serve --config webpack.dev.babel.js",
-    "check:type": "tsc"
+    "check:type": "tsc",
+    "check:code": "eslint --ignore-path .gitignore \"**/*.{ts,tsx}\""
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -32,11 +33,21 @@
     "@babel/register": "^7.15.3",
     "@types/react": "^17.0.21",
     "@types/react-dom": "^17.0.9",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
+    "@typescript-eslint/parser": "^4.31.1",
     "autoprefixer": "^10.3.4",
     "babel-loader": "^8.2.2",
     "core-js": "^3.17.3",
     "css-loader": "^6.2.0",
     "cssnano": "^5.0.8",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-airbnb-typescript": "^14.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.24.2",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-react": "^7.25.2",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "fibers": "^5.0.0",
     "html-webpack-plugin": "^5.3.2",
     "mini-css-extract-plugin": "^2.3.0",
