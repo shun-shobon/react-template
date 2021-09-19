@@ -25,7 +25,7 @@ export default {
         loader: "babel-loader",
       },
       {
-        test: /\.(?:c|sa|sc)ss$/,
+        test: /\.s?css$/,
         use: [
           MiniCssExtractPlugin.loader,
           {
