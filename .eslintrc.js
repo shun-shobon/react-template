@@ -13,6 +13,9 @@ module.exports = {
   rules: {
     "react/react-in-jsx-scope": "off",
     "react/prop-types": "off",
-    "@typescript-eslint/dot-notation": ["error", { allowIndexSignaturePropertyAccess: true }]
+    "@typescript-eslint/dot-notation": [
+      "error",
+      { allowIndexSignaturePropertyAccess: true },
+    ],
   },
 };
