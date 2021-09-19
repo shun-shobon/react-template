@@ -1,4 +1,5 @@
 import HtmlWebpackPlugin from "html-webpack-plugin";
+import CopyWebpackPlugin from "copy-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import sass from "sass";
 import fiber from "fibers";
@@ -63,6 +64,13 @@ export default {
     ],
   },
   plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve("public"),
+        },
+      ],
+    }),
     new HtmlWebpackPlugin({
       inject: "head",
       template: path.resolve("src", "index.html"),

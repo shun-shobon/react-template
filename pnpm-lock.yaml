@@ -13,6 +13,7 @@ specifiers:
   '@wemake-services/stylelint-config-scss': ^0.5.0
   autoprefixer: ^10.3.4
   babel-loader: ^8.2.2
+  copy-webpack-plugin: ^9.0.1
   core-js: ^3.17.3
   css-loader: ^6.2.0
   cssnano: ^5.0.8
@@ -64,6 +65,7 @@ devDependencies:
   '@wemake-services/stylelint-config-scss': 0.5.0_stylelint@13.13.1
   autoprefixer: 10.3.4_postcss@8.3.6
   babel-loader: 8.2.2_080b9887a086cbf3e61f158e7c92b566
+  copy-webpack-plugin: 9.0.1_webpack@5.51.1
   core-js: 3.17.3
   css-loader: 6.2.0_webpack@5.51.1
   cssnano: 5.0.8_postcss@8.3.6
@@ -2490,6 +2492,22 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
+  /copy-webpack-plugin/9.0.1_webpack@5.51.1:
+    resolution: {integrity: sha512-14gHKKdYIxF84jCEgPgYXCPpldbwpxxLbCmA7LReY7gvbaT555DgeBWBgBZM116tv/fO6RRJrsivBqRyRlukhw==}
+    engines: {node: '>= 12.13.0'}
+    peerDependencies:
+      webpack: ^5.1.0
+    dependencies:
+      fast-glob: 3.2.7
+      glob-parent: 6.0.1
+      globby: 11.0.4
+      normalize-path: 3.0.0
+      p-limit: 3.1.0
+      schema-utils: 3.1.1
+      serialize-javascript: 6.0.0
+      webpack: 5.51.1_webpack-cli@4.8.0
+    dev: true
+
   /core-js-compat/3.16.2:
     resolution: {integrity: sha512-4lUshXtBXsdmp8cDWh6KKiHUg40AjiuPD3bOWkNVsr1xkAhpUqCjaZ8lB1bKx9Gb5fXcbRbFJ4f4qpRIRTuJqQ==}
     dependencies:
@@ -3585,6 +3603,13 @@ packages:
   /glob-parent/5.1.2:
     resolution: {integrity: sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==}
     engines: {node: '>= 6'}
+    dependencies:
+      is-glob: 4.0.1
+    dev: true
+
+  /glob-parent/6.0.1:
+    resolution: {integrity: sha512-kEVjS71mQazDBHKcsq4E9u/vUzaLcw1A8EtUeydawvIWQCJM0qQ08G1H7/XTjFUulla6XQiDOG6MXSaG0HDKog==}
+    engines: {node: '>=10.13.0'}
     dependencies:
       is-glob: 4.0.1
     dev: true
