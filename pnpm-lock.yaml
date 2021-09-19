@@ -22,6 +22,7 @@ specifiers:
   react-dom: ^17.0.2
   sass: ^1.41.1
   sass-loader: ^12.1.0
+  typescript: ^4.4.3
   webpack: ^5.51.1
   webpack-cli: ^4.8.0
   webpack-dev-server: ^4.2.1
@@ -51,6 +52,7 @@ devDependencies:
   postcss-loader: 6.1.1_postcss@8.3.6+webpack@5.51.1
   sass: 1.41.1
   sass-loader: 12.1.0_4b1691717b187bb05c7bfca140173f0b
+  typescript: 4.4.3
   webpack: 5.51.1_webpack-cli@4.8.0
   webpack-cli: 4.8.0_2f6801240f7c7905d31302a9f3819dab
   webpack-dev-server: 4.2.1_webpack-cli@4.8.0+webpack@5.51.1
@@ -4603,6 +4605,12 @@ packages:
     dependencies:
       media-typer: 0.3.0
       mime-types: 2.1.32
+    dev: true
+
+  /typescript/4.4.3:
+    resolution: {integrity: sha512-4xfscpisVgqqDfPaJo5vkd+Qd/ItkoagnHpufr+i2QCHBsNYp+G7UAoyFl8aPtx879u38wPV65rZ8qbGZijalA==}
+    engines: {node: '>=4.2.0'}
+    hasBin: true
     dev: true
 
   /unicode-canonical-property-names-ecmascript/1.0.4:
